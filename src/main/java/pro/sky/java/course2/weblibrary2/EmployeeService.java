@@ -1,11 +1,15 @@
 package pro.sky.java.course2.weblibrary2;
 
 
+import java.util.Set;
+
 public interface EmployeeService {
-    Employee addEmployee(String firstName, String lastName) throws ArrayIsFullException;
-    Employee add(Employee employee);
 
-    Employee deleteEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
+    Set<String> getEmployees();
 
-    Employee findEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
+    boolean add(String firstName, String lastName);
+
+    boolean remove(String firstName, String lastName) throws EmployeeNotFoundException;
+
+    boolean findEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
 }
